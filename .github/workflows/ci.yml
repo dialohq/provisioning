@@ -28,7 +28,7 @@ jobs:
           images: ${{ env.REGISTRY }}/dialohq/tink-worker
           tags: |
             type=sha,prefix=sha-
-            type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'master') }}
+            type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'main') }}
 
       -
         name: Docker meta
@@ -38,7 +38,7 @@ jobs:
           images: ${{ env.REGISTRY }}/dialohq/flatcar-install
           tags: |
             type=sha,prefix=sha-
-            type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'master') }}
+            type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'main') }}
 
       - 
         name: Log in to the Container registry
