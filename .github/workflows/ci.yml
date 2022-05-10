@@ -74,3 +74,10 @@ jobs:
           cache-from: type=registry,ref=${{ env.REGISTRY }}/dialohq/tink-worker:buildcache
           cache-to: type=registry,ref=${{ env.REGISTRY }}/dialohq/tink-worker:buildcache,mode=max
 
+      -
+        name: Build tinkerbell hook
+        run: |
+          git clone https://github.com/tinkerbell/hook.git
+          apt-get install -y make
+          make dist
+
